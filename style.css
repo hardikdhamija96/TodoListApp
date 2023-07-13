@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+    background-color: coral;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.main-wrapper{
+    height: 100%;
+    width: 100%;
+    background-color: cadetblue;
+    position: relative;
+}
+
+h1{
+    font-size: 40px;
+    padding: 8px 0;
+    background-color: aquamarine;
+    text-align: center;
+  }
+  
+#taskInput{
+    display: block;
+    width: 100%;
+    max-width: 80%;
+    padding: 10px;
+    font-size: 18px;
+    margin: 5px auto;
+}
+
+#addButton{
+    display: block;
+    font-weight: 700;
+    font-size: 18px;
+    background-color: white;
+    /* background-color: aquamarine; */
+    border: none;
+    margin: auto;
+    position: absolute;
+    top: 69px;
+    right:10%;
+    padding: 10px;
+    border-left: 1.5px solid black;
+    /* border-bottom: 1.5px solid black; */
+}
+  
+  ul {
+    list-style-type: circle;
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+  }
+  
+  li {
+    background-color: rgba(6, 6, 39, 0.815);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+
+  li span{
+    font-size: 20px;
+    color: antiquewhite;
+    width: 80%;
+  }
+
+  li input{
+    padding: 10px;
+    border: none;
+    padding: 5%;
+    margin: 5%;
+  }
+
+  li button{
+    border: none;
+    color: rgb(15, 15, 12);
+    font-size: 18px;
+    font-weight: 700;
+    background-color: rgb(248, 140, 146);
+    border-radius: 5px;
+    padding: 6px 14px;
+    height: 5%;
+  }
+  
+  /* Responsive styles */
+  @media screen and (min-width: 768px) {
+    input[type="text"],
+    button {
+      max-width: 200px;
+    }
+  }

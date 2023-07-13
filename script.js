@@ -1,35 +1,65 @@
-//Get necessary Elements
-const taskInput = document.getElementById('taskInput');
-const addButton = document.getElementById('addButton');
-const taskList = document.getElementById('taskList');
+// Get the necessary elements
+const taskInput = document.getElementById("taskInput");
+const addButton = document.getElementById("addButton");
+const taskList = document.getElementById("taskList");
 
-//Adding event listener to "Add" button
+// Add event listener to the 'Add' button
+addButton.addEventListener("click", function () {
+  // Get the task text from the input field
+  const taskText = taskInput.value;
 
-addButton.addEventListener("click",function(){
-    // Get task text from input field
-    const taskText = taskInput.value;
+  if (taskText.trim() !== "") {
+    // Create a new task item with task text and remove button
+    const taskItem = document.createElement("li");
+    const taskTextSpan = document.createElement("span");
+    const removeButton = document.createElement("button");
 
-    // Debugging if taskText is working
-    console.log(taskText);
+    // Adding text in span and button
+    taskTextSpan.textContent = taskText;
+    removeButton.textContent = "-";
 
-    if(taskText.trim() !==""){
-        // Create a new task item which will be added to task List
-        const taskItem = document.createElement("Li");
-        taskItem.textContent = taskText;
+    // Append span and button in li
+    taskItem.appendChild(taskTextSpan);
+    taskItem.appendChild(removeButton);
 
-        // Adding this task item to task list
-        taskList.appendChild(taskItem);
+    // Add the double-click event listener for editing
+    taskTextSpan.addEventListener("dblclick", function () {
+      // Create an input field for editing
+      const editInput = document.createElement("input");
+      const addChangesButton = document.createElement("button");
+      editInput.value = taskTextSpan.textContent;
+      addChangesButton.textContent = "Add Changes";
 
-        // Clear the input field
-        taskInput.value = ""; 
-    }
-});
+      taskItem.removeChild(taskTextSpan);
+      taskItem.appendChild(editInput)
+      taskItem.appendChild(addChangesButton);
+      taskItem.removeChild(removeButton);
 
+      addChangesButton.addEventListener("click", () => {
+        const updatedText = editInput.value;
+        taskTextSpan.textContent = updatedText;
+        taskItem.appendChild(taskTextSpan);
+        taskItem.removeChild(editInput);
+        taskItem.removeChild(addChangesButton);
+        taskItem.appendChild(removeButton);
+      });
 
-// Add event listener to task list using event delegation
+      // Replace the task text with the input field
+    //   taskItem.appendChild(editInput);
 
-taskList.addEventListener("click", function(event){
-    if(event.target.tagName === "LI"){
-        event.target.remove();
-    }
+      // Focus on the input field
+      editInput.focus();
+    });
+
+    // Add the click event listener to remove the task item
+    removeButton.addEventListener("click", function () {
+      taskItem.remove();
+    });
+
+    // Add the new task item to the task list
+    taskList.appendChild(taskItem);
+
+    // Clear the input field
+    taskInput.value = "";
+  }
 });
