@@ -7,21 +7,21 @@
 body,html{
     height: 100%;
     width: 100%;
-    background-color: coral;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .main-wrapper{
     height: 100%;
     width: 100%;
-    background-color: cadetblue;
+    background-color: #352f28;
     position: relative;
 }
 
 h1{
     font-size: 40px;
-    padding: 8px 0;
-    background-color: aquamarine;
+    padding: 16px 0;
+    /* background-color: aquamarine; */
+    color: #d0a76d;
     text-align: center;
   }
   
@@ -29,66 +29,93 @@ h1{
     display: block;
     width: 100%;
     max-width: 80%;
-    padding: 10px;
+    padding: 10px 40px 10px 20px;
     font-size: 18px;
     margin: 5px auto;
+    color: #cbb17f;
+    background-color: #352f28;
+    border-radius: 10px;
+    border-bottom: 2px solid #d0a76d;
+    border-width: 0 0 2px 0;
+    transition: all 0.3s ease;
 }
+
+#taskInput::placeholder{
+ color: #cbb17f; 
+}
+
+#taskInput:focus{
+  border-radius: 10px;
+  background-color: #fff;
+  outline-color: #d0a76d;
+  color: #352f28;
+}
+
+#taskInput:focus::placeholder{
+  color: #352f28; 
+ }
 
 #addButton{
     display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
     font-weight: 700;
     font-size: 18px;
-    background-color: white;
+    color: #d0a76d;
+    background-color: #352f28;
     /* background-color: aquamarine; */
     border: none;
     margin: auto;
     position: absolute;
-    top: 69px;
-    right:10%;
+    top: 84px;
+    right:10.3%;
     padding: 10px;
-    border-left: 1.5px solid black;
+    
     /* border-bottom: 1.5px solid black; */
 }
   
   ul {
-    list-style-type: circle;
     width: 100%;
     max-width: 70%;
-    margin: auto;
+    margin: 64px auto;
   }
   
   li {
-    background-color: rgba(6, 6, 39, 0.815);
+    background-color: #6d5032;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 8px;
     border-radius: 10px;
     margin: 20px;
   }
 
   li span{
     font-size: 20px;
-    color: antiquewhite;
-    width: 80%;
+    color: #352f28;
+    width: 85%;
   }
 
   li input{
-    padding: 10px;
     border: none;
-    padding: 5%;
-    margin: 5%;
+    width: 85%;
+    margin: 5px;
+    padding: 8px;
+    color: #cbb17f;
+    background-color: #352f28;
+    border: none;
+    border-radius: 10px;
   }
 
   li button{
     border: none;
-    color: rgb(15, 15, 12);
+    color: #cbb17f;
     font-size: 18px;
     font-weight: 700;
-    background-color: rgb(248, 140, 146);
+    background-color: #352f28;
     border-radius: 5px;
     padding: 6px 14px;
-    height: 5%;
   }
   
   /* Responsive styles */

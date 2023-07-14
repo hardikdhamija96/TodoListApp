@@ -28,7 +28,7 @@ addButton.addEventListener("click", function () {
       const editInput = document.createElement("input");
       const addChangesButton = document.createElement("button");
       editInput.value = taskTextSpan.textContent;
-      addChangesButton.textContent = "Add Changes";
+      addChangesButton.textContent = "+";
 
       taskItem.removeChild(taskTextSpan);
       taskItem.appendChild(editInput)
@@ -63,3 +63,4 @@ addButton.addEventListener("click", function () {
     taskInput.value = "";
   }
 });
+
